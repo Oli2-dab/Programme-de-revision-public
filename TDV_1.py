@@ -21,7 +21,7 @@ if "page" not in st.session_state:
 # ------------------ MENU PRINCIPAL ------------------
 
 if st.session_state.page == "menu":
-    st.title("🛫 Bienvenue dans l'application d'examen")
+    st.title("🛫 Révision pour l'exam de théorie du vol 1")
     st.write("Choisissez une activité :")
 
     if st.button("📘 Répondre à des questions"):
