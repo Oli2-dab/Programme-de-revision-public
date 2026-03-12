@@ -12,9 +12,10 @@ import streamlit as st
 import re
 
 def nettoyer_mot(mot):
-    # Supprime les déterminants comme "l'", "le", "la", "les", etc.
     mot = re.sub(r"^(l'|le|la|les|un|une|des|d')\s*", "", mot)
-    mot = mot.replace("'", "")  # Supprime les apostrophes restantes
+    mot = mot.replace("'", "")
+    mot = mot.replace(",", "")
+    mot = mot.replace(".", "")
     return mot.lower()
 
 print("Exam théorie du vol pour exam 1.")
@@ -140,7 +141,6 @@ liste_question = [
     
     {"question": "Quels sont les deux types de soufflerie? (veine ___ et veine ____)", "réponses": ["guidée", "libre"], "mode": "tous"},
     {"question": "Quels sont les deux critères qui doivent être identique entre les tests en soufflerie et les tests en vol?", "réponses": ["nombre", "mach", "reynolds"], "mode": "tous"},
-    {"question": "Quels sont d'autres méthodes pour faire des tests? (réponses au singulier)", "réponses": ["tunnel", "eau", "sous", "voilure", "crash", "pilote", "essai"], "mode": "tous"},
     {"question": "Quels sont d'autres méthodes pour faire des tests? (réponses au singulier)", "réponses": ["tunnel", "eau", "sous", "voilure", "crash", "pilote", "essai"], "mode": "tous"},
     {"question": "Est-ce que la nature aime le vide? (v = vraie et f= faux)", "réponses": ["f"], "mode": "tous"},
     {"question": "Quels sont les quatres critères que l'on pose lorsqu'on étudie un fluide?", "réponses": ["conservation", "masse", "incompressible", "vitesse", "mach", "0", "5", "écoulement", "permanent"], "mode": "tous"},
